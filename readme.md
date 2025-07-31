@@ -10,6 +10,8 @@ Este proyecto ha sido desarrollado como parte de un curso académico, enfocándo
 
 ---
 
+<img src="https://cdn.devsweett.com/github/img/fAIrclass.png"
+
 ## ✨ Características Clave
 
 * **Gestión de Clases**: Los profesores pueden crear y administrar clases, y los estudiantes pueden unirse utilizando un código de clase único.
