@@ -1,0 +1,48 @@
+
+.hero-section {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    padding: 4rem 0;
+}
+
+.card-shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.card-shadow:hover {
+    transform: translateY(-5px);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+.alert-flash {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 300px;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+.badge-originality {
+    font-size: 0.9em;
+    padding: 0.5em 0.75em;
+}
+
+
+@media (max-width: 768px) {
+    .hero-section .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

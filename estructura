@@ -1,0 +1,52 @@
+fAIrclass/
+├── config/ ✅
+│   ├── config.php ✅
+│   └── database.php ✅
+├── controllers/ ✅
+│   ├── AuthController.php ✅
+│   ├── ClassController.php ✅
+│   ├── ActivityController.php ✅
+│   └── HomeController.php ✅
+├── models/ ✅
+│   ├── UserModel.php ✅
+│   ├── ClassModel.php ✅
+│   ├── ActivityModel.php ✅
+│   ├── EnrollmentModel.php ✅
+│   ├── SubmissionModel.php ✅
+│   └── PlagiarismReportModel.php ✅
+├── services/ ✅
+│   ├── PlagiarismService.php ✅ 
+│   └── SimpleAIDetector.php ✅ 
+├── views/ 
+│   ├── partials/ ✅
+│   │   ├── header.php ✅
+│   │   ├── footer.php ✅
+│   │   └── flash.php ✅
+│   ├── auth/ 
+│   │   ├── login.php ✅
+│   │   └── register.php ✅
+│   │   └── profile.php ✅
+│   │   └── unauthorized.php ✅       
+│   ├── classes/ 
+│   │   ├── create.php ✅  
+│   │   ├── dashboard.php ✅  
+│   │   ├── view.php ✅  
+│   │   └── join.php ✅  
+│   ├── activities/ 
+│   │   ├── create.php ✅ 
+│   │   ├── view.php ✅ 
+│   │   ├── submit.php ✅ 
+│   │   └── submissions.php ✅ 
+│   │   └── report.php ✅ 
+│   └── home/ 
+│       └── index.php ✅
+├── assets/ 
+│   ├── css/ 
+│   │   └── styles.css ✅ 
+│   ├── js/ 
+│   │   └── main.js ✅ 
+│   └── img/ 
+├── includes/ 
+│   ├── helpers.php 
+│   └── auth_helpers.php 
+└── index.php ✅ 
