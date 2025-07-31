@@ -31,7 +31,6 @@ PHP 7.4+
 MySQL/MariaDB
 PDO
 Bootstrap
-similar_text() (función de PHP)
 ```
 
 ---
