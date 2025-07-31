@@ -10,7 +10,7 @@ Este proyecto ha sido desarrollado como parte de un curso académico, enfocándo
 
 ---
 
-<img src="https://cdn.devsweett.com/github/img/fAIrclass.png"
+<img src="https://cdn.devsweett.com/github/img/fAIrclass.png">
 
 ## ✨ Características Clave
 
