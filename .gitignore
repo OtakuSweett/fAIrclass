@@ -1,3 +1,11 @@
 *.log
 error.log
-uploads 
+uploads/
+
+# Environment files (never commit secrets)
+/.env
+/config/.env
+
+# OS / IDE files
+.vscode/
+.idea/
