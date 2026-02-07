@@ -1,0 +1,7 @@
+.git
+vendor
+node_modules
+.sql
+config/.env
+.env
+sql/

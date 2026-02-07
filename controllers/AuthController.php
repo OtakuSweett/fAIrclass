@@ -7,6 +7,21 @@ class AuthController {
     }
 public function register() {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // CSRF
+            $csrf = $_POST['csrf_token'] ?? '';
+            if (!validate_csrf_token($csrf)) {
+                $_SESSION['flash_errors'] = ['Token CSRF inválido'];
+                header("Location: index.php?action=register");
+                exit();
+            }
+
+            // Cloudflare Turnstile (optional)
+            $turnstileResp = $_POST['cf-turnstile-response'] ?? null;
+            if (!verify_turnstile_response($turnstileResp)) {
+                $_SESSION['flash_errors'] = ['Captcha inválido o faltante'];
+                header("Location: index.php?action=register");
+                exit();
+            }
         
         $first_name = trim($_POST['first_name'] ?? '');
         $last_name = trim($_POST['last_name'] ?? '');
@@ -77,6 +92,21 @@ public function register() {
     
     public function login() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // CSRF
+            $csrf = $_POST['csrf_token'] ?? '';
+            if (!validate_csrf_token($csrf)) {
+                $_SESSION['flash_errors'] = ['Token CSRF inválido'];
+                header("Location: index.php?action=login");
+                exit();
+            }
+
+            // Turnstile
+            $turnstileResp = $_POST['cf-turnstile-response'] ?? null;
+            if (!verify_turnstile_response($turnstileResp)) {
+                $_SESSION['flash_errors'] = ['Captcha inválido o faltante'];
+                header("Location: index.php?action=login");
+                exit();
+            }
             $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
             $password = trim($_POST['password']);
 

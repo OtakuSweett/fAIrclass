@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
+    environment:
+      - PHP_DISPLAY_ERRORS=1
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.6
+    environment:
+      MYSQL_ROOT_PASSWORD: example_root_password
+      MYSQL_DATABASE: fairclass_db
+      MYSQL_USER: fairclass_user
+      MYSQL_PASSWORD: strong_password_here
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:

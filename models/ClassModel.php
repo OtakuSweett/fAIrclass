@@ -149,7 +149,7 @@ public function getUserClasses(int $userId): array {
         ");
         return $stmt->execute([$userId, $classId]);
     }
-public function getClassActivities(int $classId, int $userId = null): array {
+public function getClassActivities(int $classId, ?int $userId = null): array {
     $localTimezone = 'America/Mexico_City';
     date_default_timezone_set($localTimezone);
 

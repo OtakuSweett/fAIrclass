@@ -1,4 +1,32 @@
-# En public/.htaccess
+# Deny access to dotfiles (including .env)
+<FilesMatch "^\." >
+	Require all denied
+</FilesMatch>
+
+# Deny access to specific sensitive files
+<Files ".env">
+	Require all denied
+</Files>
+
+# Deny access to common sensitive single files
+<FilesMatch "^(README(?:\.md)?|composer\.(json|lock)|docker-compose\.yml|Dockerfile|\.gitignore|server\.php|nginx.*\.conf|\.htaccess)$">
+	Require all denied
+</FilesMatch>
+
+# Deny access to configuration and SQL dumps
+<IfModule mod_authz_core.c>
+	<Directory "/config">
+		Require all denied
+	</Directory>
+</IfModule>
+
+# Older Apache compatibility
+<IfModule !mod_authz_core.c>
+	Order allow,deny
+	Deny from all
+</IfModule>
+
+# Fallback rewrite (previous behavior)
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

@@ -252,6 +252,7 @@
             
             <div class="register-body">
                 <form action="index.php?action=register" method="POST">
+                    <input type="hidden" name="csrf_token" value="<?= generate_csrf_token() ?>">
                     <div class="form-row">
                         <div class="form-col">
                             <div class="form-group">
@@ -335,6 +336,9 @@
                     </div>
                     
                     <div class="form-group">
+                        <?php if (env('CF_TURNSTILE_SITEKEY')): ?>
+                            <div class="cf-turnstile" data-sitekey="<?= htmlspecialchars(env('CF_TURNSTILE_SITEKEY')) ?>"></div>
+                        <?php endif; ?>
                         <button type="submit" class="btn-register">
                             <i class="bi bi-person-plus"></i> Crear Cuenta
                         </button>

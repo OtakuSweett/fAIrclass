@@ -51,7 +51,7 @@ public function isActivityDelivered(int $activityId, int $userId): bool {
 }
 
 
-public function getClassActivities(int $classId, int $userId = null): array {
+public function getClassActivities(int $classId, ?int $userId = null): array {
     $stmt = $this->pdo->prepare("
         SELECT 
             a.id, 
@@ -392,7 +392,7 @@ public function getClassInfo($classId) {
      * @param string|null $filePath Ruta al archivo (opcional)
      * @return array Reporte de plagio
      */
-    public function processPlagiarism(int $submissionId, string $filePath = null): array {
+    public function processPlagiarism(int $submissionId, ?string $filePath = null): array {
         $plagiarismService = new PlagiarismService($this->pdo);
         $report = $plagiarismService->analyzeSubmission($submissionId, $filePath);
         

@@ -64,6 +64,9 @@
                     <a href="/terms.php">Términos de Uso</a>
                 </div>
             </div>
+                <?php if (env('CF_TURNSTILE_SITEKEY')): ?>
+                    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+                <?php endif; ?>
         </div>
     </footer>
     

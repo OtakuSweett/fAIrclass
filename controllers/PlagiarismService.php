@@ -12,7 +12,7 @@ class PlagiarismService {
         $this->apiKey = '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';
     }
 
-    public function analyzeSubmission(int $submissionId, string $filePath = null): array {
+    public function analyzeSubmission(int $submissionId, ?string $filePath = null): array {
         
         $submission = $this->getSubmissionData($submissionId);
         

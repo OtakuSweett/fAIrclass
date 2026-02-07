@@ -260,6 +260,7 @@
                 <?php include PARTIALS_DIR . '/flash.php'; ?>
                 
                 <form action="index.php?action=login" method="POST">
+                    <input type="hidden" name="csrf_token" value="<?= generate_csrf_token() ?>">
                     <div class="form-group">
                         <label for="email" class="form-label">Correo Electrónico</label>
                         <div class="input-icon">
@@ -279,6 +280,9 @@
                                placeholder="••••••••">
                     </div>
                     
+                    <?php if (env('CF_TURNSTILE_SITEKEY')): ?>
+                        <div class="cf-turnstile" data-sitekey="<?= htmlspecialchars(env('CF_TURNSTILE_SITEKEY')) ?>"></div>
+                    <?php endif; ?>
                     <div class="form-group">
                         <button type="submit" class="btn-login">
                             <i class="bi bi-box-arrow-in-right"></i> Ingresar
